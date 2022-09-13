@@ -1,4 +1,5 @@
 import './App.css';
+import Container from './Conteiner';
 import {getAllStudents} from './client'
 import { render } from '@testing-library/react';
 import { Component } from 'react';
@@ -61,7 +62,11 @@ class App extends Component {
         },
       ];
 
-        return (<Table dataSource={students} columns={columns} rowKey ='StudentId'/>);
+        return (
+        <Container>
+          <Table dataSource={students} columns={columns} pagination={false} rowKey ='StudentId'/>
+        </Container>
+        );
 
       
       }
